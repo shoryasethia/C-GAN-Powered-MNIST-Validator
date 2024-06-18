@@ -1,4 +1,4 @@
-# Conditional Generative Adversarial Networks
+# Conditional Generative Adversarial Networks based MNIST model validator
 ## Brief Introduction to Conditional GANs (CGANs)
 
 CGAN is an extension of the standard GAN architecture, where both the generator and discriminator are conditioned on some extra information. In this case, I use mnist digit labels as the conditioning information for generating MNIST-like images based on a given label.
