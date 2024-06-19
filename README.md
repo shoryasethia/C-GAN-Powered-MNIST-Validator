@@ -38,7 +38,7 @@ Contains necessary libraries to load [trained cgan generator](https://github.com
 ### [evaluate.py](https://github.com/shoryasethia/C-GAN-Powered-MNIST-Validator/blob/main/evaluate.py)
 * Enter your model's path
 * Set number of `testing images`; by default it is set to `num_test_images=1000`
-* To plot `top 100` predictions for your model, set `plot = 1` else `plot = 0`
+* To plot `first 100` predictions for your model, set `plot = 1` else `plot = 0`
 > **You can edit `max_plots = 100` in [backtester.py](https://github.com/shoryasethia/C-GAN-Powered-MNIST-Validator/blob/main/backtester.py) as per your needs**
 * Run evaluate.py
 * Output for [this](https://github.com/shoryasethia/C-GAN-Powered-MNIST-Validator/blob/main/mnist-cnn.h5) trained model
