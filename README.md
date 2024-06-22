@@ -36,7 +36,7 @@ git clone https://github.com/shoryasethia/C-GAN-Powered-MNIST-Validator
 Contains necessary libraries to load [trained cgan generator](https://github.com/shoryasethia/GAN/blob/main/conditional-gan-mnist/generator-mnist-cgan.h5) and function to evaluate trained mnist model
 
 ### [evaluate.py](https://github.com/shoryasethia/C-GAN-Powered-MNIST-Validator/blob/main/evaluate.py)
-* Enter your model's path
+* Enter your *keras* based model's path
 * Set number of `testing images`; by default it is set to `num_test_images=1000`
 * To plot `first 100` predictions for your model, set `plot = 1` else `plot = 0`
 > **You can edit `max_plots = 100` in [backtester.py](https://github.com/shoryasethia/C-GAN-Powered-MNIST-Validator/blob/main/backtester.py) as per your needs**
