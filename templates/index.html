@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGAN Powered MNIST Model Validator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #1e1e1e;
+        }
+        h1 {
+            color: #bb86fc;
+            text-align: center;
+        }
+        form {
+            background-color: #2e2e2e;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #bb86fc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            background-color: #3e3e3e;
+            color: #e0e0e0;
+        }
+        button {
+            background-color: #bb86fc;
+            color: #1e1e1e;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #a474e5;
+        }
+        #result {
+            margin-top: 20px;
+            background-color: #2e2e2e;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        #plot-container img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #bb86fc;
+        }
+        #clear-button {
+            background-color: #cf6679;
+            display: block;
+            margin: 20px auto 0;
+        }
+        #clear-button:hover {
+            background-color: #b55563;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conditional Generative Adversarial Network (C-GAN) based MNIST Model Validator</h1>
+    <form id="validator-form" method="post">
+        <label for="model-path">Model Path:</label>
+        <input type="text" id="model-path" name="model_path" required>
+        
+        <label for="num-test-images">Number of Test Images:</label>
+        <input type="number" id="num-test-images" name="num_test_images" value="1000">
+        
+        <label for="plot">Plot:</label>
+        <select id="plot" name="plot">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+        
+        <button type="submit">Validate Model</button>
+    </form>
+    
+    {% if result %}
+    <div id="result">
+        <h2>Results:</h2>
+        {% if result.error %}
+            <p style="color: #cf6679;">Error: {{ result.error }}</p>
+        {% else %}
+            <p><strong>Correctly predicted samples:</strong> {{ result.correct_predictions }}</p>
+            <p><strong>Incorrectly predicted samples:</strong> {{ result.incorrect_predictions }}</p>
+            <p><strong>Model accuracy:</strong> {{ result.accuracy }}%</p>
+        {% endif %}
+    </div>
+    {% endif %}
+    
+    {% if plot_url %}
+    <div id="plot-container">
+        <img src="data:image/png;base64,{{ plot_url }}" alt="Model performance plot">
+    </div>
+    {% endif %}
+
+    {% if result or plot_url %}
+    <button id="clear-button">Clear Results</button>
+    {% endif %}
+
+    <footer>
+        Made by Shorya Sethia
+    </footer>
+
+    <script>
+        document.getElementById('clear-button').addEventListener('click', function() {
+            // Clear form fields
+            document.getElementById('validator-form').reset();
+            
+            // Clear results
+            var resultDiv = document.getElementById('result');
+            if (resultDiv) resultDiv.innerHTML = '';
+            
+            // Clear plot
+            var plotContainer = document.getElementById('plot-container');
+            if (plotContainer) plotContainer.innerHTML = '';
+            
+            // Hide clear button
+            this.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
