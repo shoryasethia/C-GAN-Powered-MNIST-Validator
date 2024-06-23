@@ -29,7 +29,7 @@ Here’s how I incorporate conditioning information into the GAN:
 # Steps to test any MNIST trained model
 ### Clone repo
 ```
-git clone https://github.com/shoryasethia/C-GAN-Powered-MNIST-Validator
+git clone https://github.com/shoryasethia/C-GAN-Powered-MNIST-Validator.git
 ```
 
 ### [backtester.py](https://github.com/shoryasethia/C-GAN-Powered-MNIST-Validator/blob/main/backtester.py)
