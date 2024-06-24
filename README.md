@@ -1,5 +1,5 @@
 # Conditional Generative Adversarial Networks based MNIST model validator
-# Steps to test any Keras build MNIST trained model
+## Steps to test any Keras build MNIST model
 ### Clone repo
 ```
 git clone https://github.com/shoryasethia/C-GAN-Powered-MNIST-Validator.git
