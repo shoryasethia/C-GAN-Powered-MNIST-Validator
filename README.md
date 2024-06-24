@@ -9,13 +9,15 @@ Open terminal, write following command and run it
 ```
 python app.py
 ```
-Click on following url, displayed within terminal after running
+### Click on following url, displayed within terminal after running
 ```
 http://127.0.0.1:5000
 ```
-Following page will appear
+### Following page will appear
+
 ![First look of webpage](https://github.com/shoryasethia/C-GAN-Powered-MNIST-Validator/blob/main/res/webpage-init.png)
-Specify Model's relative path, enter number of test images to be used, select whether you wish to see plots for first 100 predictions and click on `Validate Model` button. Output for [this](https://github.com/shoryasethia/C-GAN-Powered-MNIST-Validator/blob/main/mnist-cnn.h5) trained model is
+**Specify Model's relative path, enter number of test images to be used, select whether you wish to see plots for first 100 predictions and click on `Validate Model` button. Output for [this](https://github.com/shoryasethia/C-GAN-Powered-MNIST-Validator/blob/main/mnist-cnn.h5) trained model is**
+
 ![Output](https://github.com/shoryasethia/C-GAN-Powered-MNIST-Validator/blob/main/res/webpage-output.png)
 
 ### Refer [this](https://github.com/shoryasethia/C-GAN-Powered-MNIST-Validator/blob/main/res/CGAN-MNIST-Validator-Demo.mp4) video, to see how to use this page for you own model's validation.
