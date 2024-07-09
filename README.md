@@ -71,6 +71,9 @@ Here’s how I incorporate conditioning information into the GAN:
 
 ![CGAN basic architecture](https://github.com/shoryasethia/GAN/blob/main/conditional-gan-mnist/Conditional-GAN.png)
 
+## Results
+Structural Similarity Index on 10K test set images of MNIST = `0.6188459675449165`
+
 ## Conclusion
 
 My Conditional GAN model effectively generates MNIST-like images based on specified digit labels. This can be particularly useful for generating additional training data or for testing digit recognition models. You can find my other related implementation in the following repositories:
